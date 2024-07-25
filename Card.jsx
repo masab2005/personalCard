@@ -1,14 +1,19 @@
-import profilepic from './assets/profilepic.png'
-function Card(){
+import pic from './assets/user.png'
+function Card(props){
   return(
     <div className="card">
-    <img className="pic" src={profilepic}></img>
+    <img className="pic"  src={props.profilepic}></img>
     <div className='separate'>
-    <h2 className='name'>Muhammad Masab</h2>
-    <p className='text'>I am currently enrolled in Computer Science degree.</p>
+    <h2  className='name'>{props.name}</h2>
+    <p   className='text'>{props.text}</p>
     </div>
     </div>
   );
+}
+Card.defaultProps = {
+    profilepic: pic,
+    name: 'Anonymous',
+    text: 'Information about your current studies',
 }
 
 export default Card
